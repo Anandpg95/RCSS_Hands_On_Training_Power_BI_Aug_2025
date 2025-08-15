@@ -1,0 +1,12 @@
+Customer Age Category = 
+SWITCH(
+    TRUE(),
+  Dim_customers[Age] >= 5 && Dim_customers[Age]<= 10, "Kids",
+  Dim_customers[Age] >= 11 && Dim_customers[Age]<= 17, "Teens",
+   Dim_customers[Age] >= 18 && Dim_customers[Age]<= 24, "Young Adults",
+   Dim_customers[Age] >= 25 && Dim_customers[Age]<= 34, "Adults",
+   Dim_customers[Age] >= 35 && Dim_customers[Age]<= 44, "Middle-Aged Adults",
+   Dim_customers[Age] >= 35,"Seniors",
+   BLANK()
+
+)
