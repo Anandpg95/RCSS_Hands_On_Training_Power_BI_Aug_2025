@@ -1,0 +1,294 @@
+
+<!-- saved from url=(0145)https://www.metricsthatmatter.com/MTMStudent/(S(e3cv2hrsxsz24u5ld3nzz0ot))/Gateway.aspx?orig=4&event=9695661&enddate=8/16/2025&z=1755317061&gwc=1 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>Metrics That Matter</title><link rel="stylesheet" type="text/css" href="./Metrics That Matter_files/student.css"><script language="javascript">
+	var gblIsAnonymous = false;
+	
+	function checkKey()
+	{
+		//alert(window.event.keyCode);
+   		if(window.event.keyCode == 13){
+			window.event.keyCode = 0;
+		}
+	}
+	function setHidden(){
+		if(gblIsAnonymous){
+			document.getElementById("anonymous").value = "on";
+		}
+		else{
+			document.getElementById("anonymous").value = "";
+		}
+	}
+	
+	
+	function submitForm()
+	{
+		var test;
+
+		//hate to do this, but need to scripts for different browsers
+		if(navigator.appVersion.indexOf("4.") != -1){		
+				if (verify())
+				{
+					setHidden();					
+					window.document.frmMain.submit();		
+				}
+		}
+		else
+		{
+			//NEW BROWSERS
+			if (verifyNS())
+			{
+				setHidden();							
+				document.getElementById("frmMain").submit();	
+			}	
+		}
+	}
+	function verifyNS(){
+			if(document.getElementById("anonymous2") != null){
+				var isAnonymous = (!document.getElementById("anonymous2").checked);
+			}
+			else {
+				var isAnonymous = false;
+			}
+
+		var sStudentIdentifierTypeID = "1";
+		var sRLInputDisplayName = "";
+		
+		if(window.document.getElementById("StudentIdentifierTypeID") != null)
+			sStudentIdentifierTypeID = window.document.getElementById("StudentIdentifierTypeID").value;
+		if(window.document.getElementById("RLInputDisplayName")!= null)
+			sRLInputDisplayName = window.document.getElementById("RLInputDisplayName").value;
+			
+		if(isAnonymous == false){
+			if (window.document.getElementById("email").value == "")
+			{
+				alert("You must enter a valid " + sRLInputDisplayName);
+				return false;
+			}
+			else if(sStudentIdentifierTypeID == "1") {
+				
+				var s = new String(document.getElementById("email").value);
+				var x = s.indexOf("@");
+				if(x != -1){
+					var y = s.indexOf(".", x + 2);
+					if( y != -1){
+						var z = s.lastIndexOf(".");
+						if((y - z) == 0 ||(z - y) > 1){
+							if(s.length > z + 5 || z + 2 >= s.length){
+							
+								alert("You must enter a valid email address");
+								return false;					
+							}
+						}else{
+							alert("You must enter a valid email address");
+							return false;
+						}
+					
+					}else{
+						
+						alert("You must enter a valid email address");
+						return false;				
+					}
+				}else{
+					
+					alert("You must enter a valid email address");
+					return false;	
+				}
+				if(s.indexOf(" ") != -1){
+					
+					alert("You must enter a valid email address");
+					return false;	
+				}
+
+			}
+			
+		}
+
+			gblIsAnonymous = isAnonymous;
+			return true;
+	}
+	function verify(){
+			var isAnonymous = false;
+
+			if(window.document.frmMain.anonymous2){
+				if(!window.document.frmMain.anonymous2.checked){
+					isAnonymous = true;
+				}
+				else{
+					isAnonymous = false;
+					}
+			}
+			
+			var sStudentIdentifierTypeID = "1";
+			var sRLInputDisplayName = "";
+			
+			if(window.document.frmMain.StudentIdentifierTypeID != null)
+				sStudentIdentifierTypeID = window.document.frmMain.StudentIdentifierTypeID.value;
+			if(window.document.frmMain.RLInputDisplayName != null)
+				sRLInputDisplayName = window.document.frmMain.RLInputDisplayName.value;
+
+
+			if(isAnonymous == false){
+				if (window.document.frmMain.email.value == "")
+				{
+					alert("You must enter a valid " + sRLInputDisplayName);
+					return false;
+				}
+				else if(sStudentIdentifierTypeID == "1") {
+					
+					var s = new String(window.document.frmMain.email.value);
+					var x = s.indexOf("@");
+					if(x != -1){
+						var y = s.indexOf(".", x + 2);
+						if( y != -1){
+							var z = s.lastIndexOf(".");
+							if((y - z) == 0 ||(z - y) > 1){
+								if(s.length > z + 5 || z + 2 >= s.length){
+								
+									alert("You must enter a valid email address");
+									return false;					
+								}
+							}else{
+								alert("You must enter a valid email address");
+								return false;
+							}
+						
+						}else{
+							
+							alert("You must enter a valid email address");
+							return false;				
+						}
+					}else{
+						
+						alert("You must enter a valid email address");
+						return false;	
+					}
+					if(s.indexOf(" ") != -1){
+						
+						alert("You must enter a valid email address");
+						return false;	
+					}
+ 
+				}
+				
+			}	
+
+		gblIsAnonymous = isAnonymous;
+
+		return true;
+		
+	}
+function showLegal(strLink) { 
+	window.open(strLink, "UserDetail", "scrollbars=yes, resizable=yes, height=400, width=800, top=100, left=50"); 
+
+} 
+</script></head><body marginheight="0" marginwidth="10"><table id="logos" cellpadding="0" cellspacing="0" border="0" height="97" width="100%" style="border-collapse: collapse" bordercolor="#111111"><tbody><tr><th scope="col" width="261" height="54"><img border="0" src="./Metrics That Matter_files/logo.gif" width="172" height="54" alt="CEB"></th><th width="139" height="54"> </th></tr><tr><td width="261" valign="top" height="14" bgcolor="#484889"><img border="0" src="./Metrics That Matter_files/logo_bottom.gif" width="125" height="26" alt="CEB"></td><td width="261" height="14" bgcolor="#484889"><img border="0" src="./Metrics That Matter_files/mtmblue.gif" width="1" height="1" alt=""></td></tr><tr><td height="10"></td><td width="100%" height="10"></td></tr><tr><td height="10"><img border="0" src="./Metrics That Matter_files/MTM2.gif" width="139" height="48" alt="Metrics That Matter"></td><td width="100%" height="10" align="right"><script language="javascript">
+
+      /* OnChange event was fired after user changed language from drop down list , so post back passing in querystring and selection made */
+      function ChangeLanguage(selection,theForm)
+      {
+
+        /* Get Querystring */
+        var sPageUrl = window.document.URL;
+        var sPage = '';
+        var arrString = new Array();
+        var sQueryString = "";
+        var sNewQueryString = "";
+
+        /* Extract page name from URL */
+        var index1 = sPageUrl.lastIndexOf("/");
+        var index2 = sPageUrl.lastIndexOf("?");
+
+
+        /* If question mark does not exist no query parameters yet, else append them */
+        if (index2 != -1)
+        {
+          sPage = sPageUrl.substring(index1 + 1, index2);
+          /* Extract QueryString parameters */
+          sQueryString = sPageUrl.substring(index2 + 1,sPageUrl.length);
+        }
+        else
+        {
+          sPage = sPageUrl.substring(index1 + 1, sPageUrl.length);
+          sQueryString = "";
+        }
+
+        if (sQueryString.indexOf('&') != -1)
+        {
+          arrString = sQueryString.split('&');
+
+          /* Loop through Query String and remove previous LanguageChanged and LanguageStylesheetID, so we capture new ones every time
+          and also remove StudentSurveys parameter from string so RunSurvey service thinks this is the first time accessing survey */
+
+          for (i  in arrString)
+          {
+            if (
+                  (arrString[i].indexOf("StudentSurveys") == -1) &&
+                  (arrString[i].indexOf("LanguageChanged") == -1) &&
+                  (arrString[i].indexOf("LanguageStylesheetID") == -1) &&
+                  (arrString[i].indexOf(sPageUrl) == -1) &&
+                  (arrString[i].indexOf(sPage) == -1)
+                )
+            {
+              sNewQueryString = sNewQueryString + arrString[i] + '&'
+            }
+          }
+        }
+        else
+        {
+          sNewQueryString = sQueryString;
+        }
+
+        /* Get language selection */
+        var objSelection = window.document.getElementById('selection');
+
+        var newUrl;
+        var anchorTag = "";
+
+        if(sPage.indexOf("#") > 0)
+        {
+          anchorTag = '#' + sPage.split('#')[1];
+
+          sPage = sPage.split('#')[0];
+        }
+        else if(sNewQueryString.indexOf("#") > 0)
+        {
+          anchorTag = '#' + sNewQueryString.split('#')[1];
+          anchorTag = anchorTag.replace('&','');
+
+          sNewQueryString = sNewQueryString.split('#')[0] + '&';
+        }
+      
+        if(sNewQueryString != "")
+        {
+          newUrl = sPage+'?'+sNewQueryString+'LanguageChanged=1'+'&LanguageStylesheetID='+objSelection.value+anchorTag;
+        }
+        else
+        {
+          newUrl = sPage+'?'+'&LanguageChanged=1'+'&LanguageStylesheetID='+objSelection.value+anchorTag;
+        }
+
+        
+            window.document.forms[0].action = newUrl;
+          window.document.forms[0].submit();
+        
+      }
+    </script><div class="row no-margin"></div></td></tr></tbody></table><table id="legalpolicy" width="96%" align="center" border="0"><tbody><tr><td scope="row" height="10"></td></tr><tr><td scope="row">
+			This survey is hosted by CEB on behalf of your training provider(s). 
+			To find out more about the sponsor of this survey follow this <a target="_new" href="https://www.metricsthatmatter.com/Legal/privacypolicy.htm?#SPONSOR">link</a>.
+		</td></tr><tr><td scope="row">
+			Your open and honest feedback is very valuable. It will help us 
+			improve the quality of the training experience. Before completing 
+			the survey please tell us about your communication preferences. 
+		</td></tr></tbody></table><center><form name="frmMain" id="frmMain" action="https://www.metricsthatmatter.com/MTMStudent/(S(e3cv2hrsxsz24u5ld3nzz0ot))/ProcessStudent.aspx" method="post" onkeypress="checkKey()"><table id="content" border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%"><tbody><tr><td scope="row" width="19%" height="1"></td><td width="52%" height="1"></td><td width="37%" height="1"></td></tr><tr><td scope="row" width="19%" height="1"></td><td width="52%" height="1"></td><td width="37%" height="1"></td></tr><tr><td scope="row" width="19%" height="297" valign="top"> </td><td width="52%" height="297"><div align="center"><center><table id="content1" border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr height="30"><td scope="row" height="30" bgcolor="#FFFFFF" bordercolor="#484889" align="right" valign="bottom" colspan="2"><img border="0" src="./Metrics That Matter_files/topleft.gif" width="30" height="24" alt=""></td><td height="30" bgcolor="#FFFFFF" bordercolor="#484889" colspan="2"><img border="0" src="./Metrics That Matter_files/topf.gif" width="100%" height="30" alt=""></td><td height="30" bgcolor="#FFFFFF" bordercolor="#484889" colspan="2"><img border="0" src="./Metrics That Matter_files/toprgt.gif" width="25" height="30" alt=""></td></tr><tr><td height="25"><img border="0" src="./Metrics That Matter_files/blankspacer.gif" width="20" height="1" alt=""></td><td height="25" align="right" class="wb"><img border="0" src="./Metrics That Matter_files/mtmblue.gif" width="18" height="1" alt=""></td><td height="25" class="wb" nowrap="true"><label for="optin"></label><input type="checkbox" checked="true" name="optin" id="optin"></td><td height="22" class="wbs"><font face="Arial">Following this survey I want to participate in a one-time follow-up survey.</font></td><td height="25" class="wb"><img border="0" src="./Metrics That Matter_files/mtmblue.gif" width="18" height="1" alt=""></td><td height="25"><img border="0" src="./Metrics That Matter_files/blankspacer.gif" width="20" height="1" alt=""></td></tr><tr><td height="19"><img border="0" src="./Metrics That Matter_files/blankspacer.gif" width="20" height="1" alt=""></td><td height="19" align="right" class="wb"><img border="0" src="./Metrics That Matter_files/mtmblue.gif" width="18" height="1" alt=""></td><td height="19" class="wb" colspan="2"><font size="1"></font><img border="0" src="./Metrics That Matter_files/mtmblue.gif" width="1" height="1" alt=""></td><td height="19" class="wb"><img border="0" src="./Metrics That Matter_files/mtmblue.gif" width="18" height="1" alt=""></td><td height="19"><img border="0" src="./Metrics That Matter_files/blankspacer.gif" width="20" height="1" alt=""></td></tr><tr><td height="25"><img border="0" src="./Metrics That Matter_files/blankspacer.gif" width="20" height="1" alt=""></td><td height="25" align="right" class="wb"><img border="0" src="./Metrics That Matter_files/mtmblue.gif" width="18" height="1" alt=""></td><td height="25" class="wb" nowrap="true"><label for="anonymous2"></label><input type="checkbox" checked="true" name="anonymous2" id="anonymous2"></td><td height="22" class="wbs"><font face="Arial">I want to be contacted by my training provider regarding my training experience.</font></td><td height="25" class="wb"><img border="0" src="./Metrics That Matter_files/mtmblue.gif" width="18" height="1" alt=""></td><td height="25"><img border="0" src="./Metrics That Matter_files/blankspacer.gif" width="20" height="1" alt=""></td></tr><tr><td height="19"><img border="0" src="./Metrics That Matter_files/blankspacer.gif" width="20" height="1" alt=""></td><td height="19" align="right" class="wb"><img border="0" src="./Metrics That Matter_files/mtmblue.gif" width="18" height="1" alt=""></td><td height="19" class="wb" colspan="2"><font size="1"></font><img border="0" src="./Metrics That Matter_files/mtmblue.gif" width="1" height="1" alt=""></td><td height="19" class="wb"><img border="0" src="./Metrics That Matter_files/mtmblue.gif" width="18" height="1" alt=""></td><td height="19"><img border="0" src="./Metrics That Matter_files/blankspacer.gif" width="20" height="1" alt=""></td></tr><tr><td height="25"><img border="0" src="./Metrics That Matter_files/blankspacer.gif" width="20" height="1" alt=""></td><td height="25" width="5" align="right" class="wb"><img border="0" src="./Metrics That Matter_files/mtmblue.gif" width="18" height="1" alt=""></td><td height="25" class="wb" nowrap="true" colspan="2">E-mail Address</td><td height="25" width="10" class="wb"><img border="0" src="./Metrics That Matter_files/mtmblue.gif" width="18" height="1" alt=""></td><td height="25"><img border="0" src="./Metrics That Matter_files/blankspacer.gif" width="20" height="1" alt=""></td></tr><tr><td height="25"><img border="0" src="./Metrics That Matter_files/blankspacer.gif" width="20" height="1" alt=""></td><td height="25" width="5" align="right" class="wb"><img border="0" src="./Metrics That Matter_files/mtmblue.gif" width="18" height="1" alt=""></td><td height="25" class="wb" colspan="2"><font face="Arial"><label for="email"></label><input type="text" size="30" style="width=250" name="email" id="email"></font></td><td height="25" width="10" class="wb"><img border="0" src="./Metrics That Matter_files/mtmblue.gif" width="18" height="1" alt=""></td><td height="25"><img border="0" src="./Metrics That Matter_files/blankspacer.gif" width="20" height="1" alt=""></td></tr><tr><td height="19"><img border="0" src="./Metrics That Matter_files/blankspacer.gif" width="20" height="1" alt=""></td><td height="19" align="right" width="5" class="wbs"><img border="0" src="./Metrics That Matter_files/mtmblue.gif" width="18" height="1" alt=""></td><td height="19" class="wbs" colspan="2"><font size="1">Your e-mail address will be kept confidential and will only be used to evaluate this training. 
+                                        With your permission it may be used to invite you to a one-time follow-up survey or shared with your training provider. 
+                                        It will not be shared with any third parties. distributing a one time follow up evaluation.</font><img border="0" src="./Metrics That Matter_files/mtmblue.gif" width="1" height="1" alt=""></td><td height="19" width="10" class="wbs"><img border="0" src="./Metrics That Matter_files/mtmblue.gif" width="18" height="1" alt=""></td><td height="19"><img border="0" src="./Metrics That Matter_files/blankspacer.gif" width="20" height="1" alt=""></td></tr><input type="hidden" name="anonymous" id="anonymous" value=""><tr><td scope="row" height="17"><img border="0" src="./Metrics That Matter_files/blankspacer.gif" width="20" height="1" alt=""></td><td height="17" align="right" class="wbs"><img border="0" src="./Metrics That Matter_files/mtmblue.gif" width="1" height="1" alt=""></td><td height="17" class="wbs" colspan="2"><img border="0" src="./Metrics That Matter_files/mtmblue.gif" width="1" height="1" alt=""></td><td height="17" class="wbs"><img border="0" src="./Metrics That Matter_files/mtmblue.gif" width="1" height="1" alt=""></td><td height="17"><img border="0" src="./Metrics That Matter_files/blankspacer.gif" width="20" height="1" alt=""></td></tr><tr><td scope="row" height="61"><img border="0" src="./Metrics That Matter_files/blankspacer.gif" width="20" height="1" alt=""></td><td height="61" class="wb"><img border="0" src="./Metrics That Matter_files/mtmblue.gif" width="18" height="1" alt=""></td><td colspan="2" align="center" height="61" class="wbs"><font face="Arial"><label for=""></label><a href="javascript:submitForm();"><img border="0" src="./Metrics That Matter_files/StartEN.JPG" width="100" height="30" alt="Start"></a></font></td><td height="61" class="wb"><img border="0" src="./Metrics That Matter_files/mtmblue.gif" width="18" height="1" alt=""></td><td height="61"><img border="0" src="./Metrics That Matter_files/blankspacer.gif" width="20" height="1" alt=""></td></tr><tr><td scope="row" height="61"><img border="0" src="./Metrics That Matter_files/blankspacer.gif" width="20" height="1" alt=""></td><td height="61" class="wb"><img border="0" src="./Metrics That Matter_files/mtmblue.gif" width="18" height="1" alt=""></td><td colspan="2" align="center" height="61" class="wbs"></td><td height="61" class="wb"><img border="0" src="./Metrics That Matter_files/mtmblue.gif" width="18" height="1" alt=""></td><td height="61"><img border="0" src="./Metrics That Matter_files/blankspacer.gif" width="20" height="1" alt=""></td></tr><tr><td scope="row" height="19"><img border="0" src="./Metrics That Matter_files/blankspacer.gif" width="20" height="1" alt=""></td><td height="19" class="wb"><img border="0" src="./Metrics That Matter_files/mtmblue.gif" width="18" height="1" alt=""></td><td height="19" class="wbs" colspan="2"><img border="0" src="./Metrics That Matter_files/mtmblue.gif" width="1" height="1" alt=""></td><td height="19" class="wb"><img border="0" src="./Metrics That Matter_files/mtmblue.gif" width="18" height="1" alt=""></td><td height="19"><img border="0" src="./Metrics That Matter_files/blankspacer.gif" width="20" height="1" alt=""></td></tr><tr><td scope="row" height="40"><img border="0" src="./Metrics That Matter_files/blankspacer.gif" width="20" height="1" alt=""></td><td align="right" class="wb"><img border="0" src="./Metrics That Matter_files/mtmblue.gif" width="18" height="1" alt=""></td><td colspan="2" class="wbs">
+						Recommended Site Technology:
+						<br><font size="1">  Microsoft Internet Explorer 5.5 or greater
+							<br>  Netscape Navigator 6.x or greater
+						</font></td><td class="wb"><img border="0" src="./Metrics That Matter_files/mtmblue.gif" width="18" height="1" alt=""></td><td height="40"><img border="0" src="./Metrics That Matter_files/blankspacer.gif" width="20" height="1" alt=""></td></tr><tr><td scope="row" height="28" bgcolor="#FFFFFF" align="right" valign="top" colspan="2"><img border="0" src="./Metrics That Matter_files/btmleft.gif" width="25" height="28" alt=""></td><td colspan="2" height="28" bgcolor="#FFFFFF" valign="top"><img border="0" src="./Metrics That Matter_files/btmf.gif" width="100%" height="25" alt=""></td><td height="28" bgcolor="#FFFFFF" valign="top" colspan="2"><img border="0" src="./Metrics That Matter_files/btmrgt.gif" width="28" height="25" alt=""></td></tr></tbody></table></center></div></td><td width="37%" height="297" valign="bottom" align="right"> </td></tr><tr><td scope="row" width="19%" height="22"> </td><td width="52%" height="22"> </td><td width="37%" height="22"> </td></tr></tbody></table><table id="policycontent" width="96%" border="0"><tbody><tr><td scope="row"><font size="2pt">To review CEB' privacy policy please click on <a target="_new" href="https://www.metricsthatmatter.com/Legal/privacypolicy.htm?#HOST">https://www.metricsthatmatter.com/Legal/privacypolicy.htm</a></font></td></tr><tr><td scope="row"><font size="2pt"></font></td></tr><tr><td scope="row"><font size="2pt">CEB is certified to the ‘Safe Harbor’ framework for privacy protection as approved by the EU (<a target="_new" href="http://www.export.gov/safeharbor">http://www.export.gov/safeharbor</a>).</font></td></tr></tbody></table><input type="hidden" name="oid" id="oid" value="85011"><input type="hidden" name="TimeOffset" id="TimeOffset" value="6"><input type="hidden" name="sid" id="sid" value="23394585"><input type="hidden" name="sidlist" id="sidlist" value="23394585"><input type="hidden" name="FormID" id="FormID" value="98921"><input type="hidden" name="EventID" id="EventID" value="9695661"><input type="hidden" name="orig" id="orig" value="4"><input type="hidden" name="rtyp" id="rtyp" value="1"><input type="hidden" name="cu" id="cu" value=""><input type="hidden" name="addtlalias" id="addtlalias" value=""><input type="hidden" name="IsGenericLinkForConferenceHomePage" id="IsGenericLinkForConferenceHomePage" value="False"><input type="hidden" name="Preview" id="Preview" value="0"><input type="hidden" name="opttype" id="opttype" value="optin"><input type="hidden" name="LanguageID" id="LanguageID" value="1"></form></center><table id="private policy" width="100%" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" cellpadding="0"><tbody><tr bgcolor="#e2e2e2"><td scope="row" width="2%" bgcolor="#484889"></td><td width="16%" nowrap="true" bgcolor="#484889"><font size="1"><a title="CEB privacy policy" href="javascript:showLegal(&#39;/Legal/privacypolicy.htm&#39;);"><font color="#FFFFFF">
+						Privacy Notice
+					</font></a></font></td><td width="16%" nowrap="true" bgcolor="#484889"><font size="1"><a title="CEB site and content legal disclaimer" href="javascript:showLegal(&#39;/Legal/LegalDisclaimer.htm&#39;);"><font color="#FFFFFF">
+							Legal Disclaimer
+						</font></a></font></td><td width="40%" nowrap="true" bgcolor="#484889"><font size="1" color="#FFFFFF">
+				To contact CEB call 1 800-561-3341 or 1 312-372-5676 or email MTMnoreply@executiveboard.com
+			</font></td><td width="26%" bgcolor="#484889"><img border="0" src="./Metrics That Matter_files/mtmblue.gif" width="1" height="1" alt=""></td></tr><tr><td colspan="5"></td></tr><tr><td colspan="5"><font size="1" color="#666666">© 2005 CEB.  All rights reserved.</font></td></tr></tbody></table></body></html>
